@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./build/main.css">
+    <title>My To-do list</title>
+</head>
+
+<body class="bg-teal-100 text-teal-100">
+    <main class="flex items-center justify-center h-screen px-10">
+        <section class="todo-container bg-teal-900 px-8 py-4 w-full max-w-screen-md rounded-sm">
+            <div class="text-4xl pb-8">
+                <h1 class="text-center">Todo list</h1>
+            </div>
+            <div class="flex mb-8">
+                <input class="flex-4 w-3/4 py-3 placeholder-gray-700 pl-4 rounded" type="text" name="todo" id="todo"
+                    placeholder="Enter your task here" />
+                <button class="flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded"
+                    id="add">Add</button>
+            </div>
+            <div class="mt-16">
+                <ul>
+                    <li class="finished flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4">
+                        <div class="flex-1">
+                            <i class=" ml-4 fa fa-check" aria-hidden="true"></i>
+                            <span class="ml-4">Plan the weekend</span>
+                        </div>
+                        <i class="flex-1 right-0 fa fa-trash" aria-hidden="true"></i>
+                    </li>
+                    <li class="finished flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4">
+                        <div class="flex-1">
+                            <i class="ml-4 fa fa-check" aria-hidden="true"></i>
+                            <span class="ml-4">Plan the weekend</span>
+                        </div>
+                        <i class="flex-1 right-0 fa fa-trash" aria-hidden="true"></i>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

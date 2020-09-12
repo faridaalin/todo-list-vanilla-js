@@ -1,0 +1,25 @@
+{
+  "name": "todo-list-vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss css/tailwind.css -o public/build/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faridaalin/todo-list-vanilla-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faridaalin/todo-list-vanilla-js/issues"
+  },
+  "homepage": "https://github.com/faridaalin/todo-list-vanilla-js#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "^1.8.8"
+  }
+}

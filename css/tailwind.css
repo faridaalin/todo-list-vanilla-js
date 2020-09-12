@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.finished {
+  background-color: #2b5c5d;
+}
+.finished span {
+  text-decoration: line-through;
+  color: #66bfaf;
+}
