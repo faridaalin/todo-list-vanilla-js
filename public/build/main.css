@@ -21246,6 +21246,14 @@ video {
   margin-bottom: 1rem;
 }
 
+.todo-item .complete {
+  margin-left: 1rem;
+}
+
+.todo-item .delete {
+  flex: 1 1 0%;
+}
+
 .finished {
   background-color: #2b5c5d;
 }

@@ -5,7 +5,6 @@ const list = document.querySelector(".todo-list");
 let todos = {
   todoItems: [],
   completed: false,
-  delete: false,
 };
 
 const getinputValue = () => {
@@ -32,16 +31,31 @@ const addTodo = (todos) => {
   return;
 };
 
-const deleteTodo = (todos) => {
-  const todoItem = document.querySelectorAll(".todo-item");
+const deleteTodo = () => {
+  const { todoItems } = todos;
+  const todosList = document.querySelectorAll(".todo-item");
+  const todosArray = Array.from(todosList);
 
-  const todosArray = Array.from(todoItem);
-  todosArray.forEach((todo) => {
+  todosArray.forEach((todo, index) => {
     todo.addEventListener("click", (event) => {
       if (event.target.className.includes("delete")) {
-        const todoParent = event.target.parentElement;
-        todoParent.remove();
-        console.log(todos);
+        const { parentElement } = event.target;
+        parentElement.remove();
+        todoItems.splice(index, 1);
+      }
+    });
+  });
+};
+
+const completeTodo = () => {
+  const todosList = document.querySelectorAll(".todo-item");
+  const todosArray = Array.from(todosList);
+
+  todosArray.forEach((todo) => {
+    todo.addEventListener("click", (event) => {
+      if (event.target.className.includes("completed")) {
+        const { parentElement } = event.target;
+        parentElement.classList.toggle("finished");
       }
     });
   });
@@ -56,9 +70,10 @@ const createTodoList = () => {
   addTodo(todoItems);
 
   // mark item todo as completed
+  completeTodo(todoItems);
 
   // delete item todo
-  deleteTodo(todoItems);
+  deleteTodo();
 };
 
 button.addEventListener("click", createTodoList);
