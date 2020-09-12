@@ -18,33 +18,22 @@
                 <h1 class="text-center">Todo list</h1>
             </div>
             <div class="flex mb-8">
-                <input class="flex-4 w-3/4 py-3 placeholder-gray-700 pl-4 rounded" type="text" name="todo" id="todo"
-                    placeholder="Enter your task here" />
-                <button class="flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded"
+                <input class="todo-input text-black flex-4 w-3/4 py-3 placeholder-gray-700 pl-4 rounded focus:bg-white"
+                    type="text" name="todo" id="todo" placeholder="Enter your task here" />
+                <button
+                    class="todo-btn flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded"
                     id="add">Add</button>
             </div>
-            <div class="mt-16">
-                <ul>
-                    <li class="finished flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4">
-                        <div class="flex-1">
-                            <i class=" ml-4 fa fa-check" aria-hidden="true"></i>
-                            <span class="ml-4">Plan the weekend</span>
-                        </div>
-                        <i class="flex-1 right-0 fa fa-trash" aria-hidden="true"></i>
-                    </li>
-                    <li class="finished flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4">
-                        <div class="flex-1">
-                            <i class="ml-4 fa fa-check" aria-hidden="true"></i>
-                            <span class="ml-4">Plan the weekend</span>
-                        </div>
-                        <i class="flex-1 right-0 fa fa-trash" aria-hidden="true"></i>
-                    </li>
+            <div class="mt-8">
+                <ul class="todo-list">
 
                 </ul>
             </div>
         </section>
     </main>
 
+
+    <script src="./app.js"></script>
 </body>
 
 </html>

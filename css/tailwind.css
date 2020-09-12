@@ -2,10 +2,24 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.todo-item {
+  @apply flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4;
+}
+
+.todo-item .complete {
+  @apply ml-4;
+}
+.todo-item .delete {
+  @apply flex-1;
+}
+
 .finished {
   background-color: #2b5c5d;
 }
 .finished span {
   text-decoration: line-through;
+  color: #66bfaf;
+}
+.finished .done {
   color: #66bfaf;
 }

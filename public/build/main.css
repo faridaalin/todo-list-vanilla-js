@@ -21234,12 +21234,28 @@ video {
           animation: bounce 1s infinite;
 }
 
+.todo-item {
+  display: flex;
+  align-items: center;
+  border-bottom-width: 2px;
+  --border-opacity: 1;
+  border-color: #e6fffa;
+  border-color: rgba(230, 255, 250, var(--border-opacity));
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
 .finished {
   background-color: #2b5c5d;
 }
 
 .finished span {
   text-decoration: line-through;
+  color: #66bfaf;
+}
+
+.finished .done {
   color: #66bfaf;
 }
 
