@@ -14,14 +14,21 @@
 <body class="bg-teal-100 text-teal-100">
     <main class="flex items-center justify-center h-screen px-10">
         <section class="todo-container bg-teal-900 px-8 py-4 w-full max-w-screen-md rounded-sm">
-            <div class="text-4xl pb-8">
-                <h1 class="text-center">Todo list</h1>
+            <div class="flex items-center justify-between pb-4">
+                <span class="date text-sm text-teal-200"></span>
+                <h1 class="text-center text-4xl tracking-wider uppercase">Todo list</h1>
+            </div>
+            <div class="flex items-center justify-between pb-8">
+                <span class="completed flex-1 text-sm text-teal-100 cursor-pointer hover:text-teal-200">Completed</span>
+                <span
+                    class="icompleted flex flex-1 text-sm text-teal-100 cursor-pointer hover:text-teal-200">Incompleted</span>
             </div>
             <div class="flex mb-8">
-                <input class="todo-input text-black flex-4 w-3/4 py-3 placeholder-gray-700 pl-4 rounded focus:bg-white"
+                <input
+                    class="todo-input text-black flex-4 w-3/4 py-3 bg-teal-100 placeholder-gray-700 pl-4 rounded focus:outline-none  focus:shadow-outline  focus:bg-white "
                     type="text" name="todo" id="todo" placeholder="Enter your task here" />
                 <button
-                    class="todo-btn flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded"
+                    class="todo-btn flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded hover:bg-teal-400 hover:text-teal-900"
                     id="add">Add</button>
             </div>
             <div class="mt-8">

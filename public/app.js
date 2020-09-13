@@ -1,3 +1,4 @@
+const dateContainer = document.querySelector(".date");
 const input = document.querySelector(".todo-input");
 const button = document.querySelector(".todo-btn");
 const list = document.querySelector(".todo-list");
@@ -54,7 +55,7 @@ const addTodo = () => {
   // Get value from input field
   getinputValue();
 
-  // add todos to the list
+  // create a todo list t
   const { todoItems } = todos;
   createList(todoItems);
 
@@ -63,3 +64,36 @@ const addTodo = () => {
 };
 
 button.addEventListener("click", addTodo);
+input.addEventListener(
+  "keypress",
+  (e) => (e.key === "Enter" || e.keyCode === 13) && addTodo()
+);
+
+// set date
+const addDate = () => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  let today = new Date();
+  const date = today.getDate();
+  const day = days[today.getDay()];
+  const year = today.getFullYear();
+  const month = months[today.getMonth()];
+
+  dateContainer.innerText = `${day} ${date} ${month} ${year}`;
+};
+
+addDate();
