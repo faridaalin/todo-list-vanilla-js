@@ -124,6 +124,8 @@ addDate();
 const getCompletedTodos = () => {
   const completedTodos = todoItems.filter((item) => item.completed !== false);
   addTodo(completedTodos);
+  markCompleteTodo();
+  deleteTodo();
 };
 const completedTasks = document.querySelector(".completed");
 completedTasks.addEventListener("click", getCompletedTodos);
@@ -131,12 +133,16 @@ completedTasks.addEventListener("click", getCompletedTodos);
 const getIncompleteTasks = () => {
   const incomplTodos = todoItems.filter((item) => item.completed === false);
   addTodo(incomplTodos);
+  markCompleteTodo();
+  deleteTodo();
 };
 const incompleteTasks = document.querySelector(".incompleted");
 incompleteTasks.addEventListener("click", getIncompleteTasks);
 
 const getAllTodos = () => {
   addTodo(todoItems);
+  markCompleteTodo();
+  deleteTodo();
 };
 
 const all = document.querySelector(".all");
