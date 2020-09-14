@@ -3,47 +3,46 @@ const input = document.querySelector(".todo-input");
 const button = document.querySelector(".todo-btn");
 const list = document.querySelector(".todo-list");
 
-let todos = {
-  todoItems: [],
-};
+let todoItems = [];
 
 const getinputValue = () => {
-  if (input.value === "") {
+  const inputValue = input.value.trim();
+  if (inputValue === "") {
     return;
   } else {
-    todos.todoItems.push(input.value);
+    todoItems.push({ item: inputValue, completed: false });
   }
 
   input.value = "";
 };
 
-const createList = (todos) => {
+const addTodo = (todos) => {
   if (todos.length > 0) {
     list.innerHTML = "";
     todos.map((item) => {
-      list.innerHTML += `<li class="todo-item grid grid-cols-6 gap-4">
-          <i class="completed ml-4 fa fa-check" aria-hidden="true"></i>
-          <span class="ml-4">${item}</span>
-          <i class="delete fa fa-trash" aria-hidden="true"></i>
+      list.innerHTML += `<li class="todo-item ${
+        item.completed === true ? "finished" : ""
+      } grid grid-cols-6 gap-4">
+          <i class="completed ml-4 fa fa-check cursor-pointer" aria-hidden="true"></i>
+          <span class="ml-4">${item.item}</span>
+          <i class="delete cursor-pointer fa fa-trash" aria-hidden="true"></i>
       </li>`;
     });
   }
   return;
 };
+const deleteTodo = () => {
+  const todosList = list.children;
+  const todosArray = [...todosList];
 
-const deleteTodo = (todoItems) => {
-  const todosList = document.querySelectorAll(".todo-item");
-  const todosArray = Array.from(todosList);
-
-  todosArray.forEach((todo, index) => {
-    todo.addEventListener("click", (event) => {
+  todosArray.forEach((item, index) => {
+    item.addEventListener("click", (event) => {
+      const { parentElement } = event.target;
       if (event.target.className.includes("delete")) {
-        const { parentElement } = event.target;
+        console.log("delete icon clicked");
         parentElement.remove();
         todoItems.splice(index, 1);
-      } else if (event.target.className.includes("completed")) {
-        const { parentElement } = event.target;
-        parentElement.classList.toggle("finished");
+        saveToLocalStorage(todoItems);
       } else {
         return;
       }
@@ -51,22 +50,46 @@ const deleteTodo = (todoItems) => {
   });
 };
 
-const addTodo = () => {
+const markCompleteTodo = () => {
+  const todosList = list.children;
+  const todosArray = [...todosList];
+
+  todosArray.forEach((item, index) => {
+    item.addEventListener("click", (event) => {
+      const { parentElement } = event.target;
+      if (event.target.className.includes("completed")) {
+        console.log("checkmark icon clicked");
+        todoItems[index].completed = !todoItems[index].completed;
+        parentElement.classList.toggle("finished");
+        saveToLocalStorage(todoItems);
+      } else {
+        return;
+      }
+    });
+  });
+};
+
+const displayTodo = () => {
   // Get value from input field
   getinputValue();
 
-  // create a todo list t
-  const { todoItems } = todos;
-  createList(todoItems);
+  // add todo to the list
+  addTodo(todoItems);
 
   // delete item todo
-  deleteTodo(todoItems);
+  deleteTodo();
+
+  // completed item todo
+  markCompleteTodo();
+
+  // save to local storage on button click
+  saveToLocalStorage(todoItems);
 };
 
-button.addEventListener("click", addTodo);
+button.addEventListener("click", displayTodo);
 input.addEventListener(
   "keypress",
-  (e) => (e.key === "Enter" || e.keyCode === 13) && addTodo()
+  (e) => (e.key === "Enter" || e.keyCode === 13) && displayTodo()
 );
 
 // set date
@@ -97,3 +120,37 @@ const addDate = () => {
 };
 
 addDate();
+
+const getCompletedTodos = () => {
+  let filteredTodos = todoItems.filter((item) => item.completed !== false);
+  addTodo(filteredTodos);
+};
+const completedTasks = document.querySelector(".completed");
+completedTasks.addEventListener("click", getCompletedTodos);
+
+const getIncompleteTasks = () => {
+  let filteredTodos = todoItems.filter((item) => item.completed !== true);
+  addTodo(filteredTodos);
+};
+const incompleteTasks = document.querySelector(".incompleted");
+incompleteTasks.addEventListener("click", getIncompleteTasks);
+
+const saveToLocalStorage = (todos) => {
+  localStorage.setItem("todosList", JSON.stringify(todos));
+};
+
+const getFromLocalStorage = () => {
+  if (localStorage.getItem("todosList") === null) {
+    return;
+  } else {
+    todoItems = [...JSON.parse(localStorage.getItem("todosList"))];
+    addTodo(todoItems);
+  }
+};
+document.addEventListener("DOMContentLoaded", () => {
+  if (list.children) {
+    markCompleteTodo();
+    deleteTodo();
+  }
+});
+getFromLocalStorage();
