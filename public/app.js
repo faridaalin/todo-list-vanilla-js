@@ -122,18 +122,25 @@ const addDate = () => {
 addDate();
 
 const getCompletedTodos = () => {
-  let filteredTodos = todoItems.filter((item) => item.completed !== false);
-  addTodo(filteredTodos);
+  const completedTodos = todoItems.filter((item) => item.completed !== false);
+  addTodo(completedTodos);
 };
 const completedTasks = document.querySelector(".completed");
 completedTasks.addEventListener("click", getCompletedTodos);
 
 const getIncompleteTasks = () => {
-  let filteredTodos = todoItems.filter((item) => item.completed !== true);
-  addTodo(filteredTodos);
+  const incomplTodos = todoItems.filter((item) => item.completed === false);
+  addTodo(incomplTodos);
 };
 const incompleteTasks = document.querySelector(".incompleted");
 incompleteTasks.addEventListener("click", getIncompleteTasks);
+
+const getAllTodos = () => {
+  addTodo(todoItems);
+};
+
+const all = document.querySelector(".all");
+all.addEventListener("click", getAllTodos);
 
 const saveToLocalStorage = (todos) => {
   localStorage.setItem("todosList", JSON.stringify(todos));
