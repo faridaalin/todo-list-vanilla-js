@@ -21794,6 +21794,11 @@ video {
           animation: bounce 1s infinite;
 }
 
+h1 {
+  color: #ebb85f;
+  font-size: 4vw;
+}
+
 .todo-container {
   --bg-opacity: 1;
   background-color: #234e52;
@@ -21804,7 +21809,8 @@ video {
   padding-bottom: 1rem;
   width: 100%;
   max-width: 768px;
-  border-radius: 0.125rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
 }
 
 .todo-item {

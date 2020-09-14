@@ -2,8 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+h1 {
+  color: #ebb85f;
+  font-size: 4vw;
+}
+
 .todo-container {
-  @apply bg-teal-900 px-8 py-4 w-full max-w-screen-md rounded-sm;
+  @apply bg-teal-900 px-8 py-4 w-full max-w-screen-md shadow-xl rounded-lg;
 }
 
 .todo-item {
