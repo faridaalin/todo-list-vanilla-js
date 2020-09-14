@@ -22,10 +22,10 @@ const addTodo = (todos) => {
     todos.map((item) => {
       list.innerHTML += `<li class="todo-item ${
         item.completed === true ? "finished" : ""
-      } grid grid-cols-6 gap-4">
+      } flex items-center w-full pr-4">
           <i class="completed ml-4 fa fa-check cursor-pointer" aria-hidden="true"></i>
           <span class="ml-4">${item.item}</span>
-          <i class="delete cursor-pointer fa fa-trash" aria-hidden="true"></i>
+          <i class="delete ml-auto cursor-pointer fa fa-trash" aria-hidden="true"></i>
       </li>`;
     });
   }

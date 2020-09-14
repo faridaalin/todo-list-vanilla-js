@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.todo-container {
+  @apply bg-teal-900 px-8 py-4 w-full max-w-screen-md rounded-sm;
+}
+
 .todo-item {
   @apply flex items-center border-b-2 border-teal-100 pb-3 pt-3 mb-4;
 }
@@ -9,11 +13,9 @@
 .todo-item .complete {
   @apply ml-4;
 }
-.todo-item .delete {
-  @apply flex-1;
-}
 
-.finished {
+.finished,
+.todo-item:hover {
   background-color: #2b5c5d;
 }
 .finished span {

@@ -13,7 +13,8 @@
 
 <body class="bg-teal-100 text-teal-100">
     <main class="flex items-center justify-center h-screen px-10">
-        <section class="todo-container bg-teal-900 px-8 py-4 w-full max-w-screen-md rounded-sm">
+
+        <section class="todo-container shadow-xl">
             <div class="flex items-center justify-between pb-4">
                 <span class="date text-sm text-teal-200"></span>
                 <h1 class="text-center text-4xl tracking-wider uppercase">Todo list</h1>
@@ -26,10 +27,10 @@
             </div>
             <div class="flex mb-8">
                 <input
-                    class="todo-input text-black flex-4 w-3/4 py-3 bg-teal-100 placeholder-gray-700 pl-4 rounded focus:outline-none  focus:shadow-outline  focus:bg-white "
+                    class="todo-input shadow-xl text-black flex-4 w-3/4 py-3 bg-teal-100 placeholder-gray-700 pl-4 rounded focus:outline-none  focus:shadow-outline  focus:bg-white "
                     type="text" name="todo" id="todo" placeholder="Enter your task here" />
                 <button
-                    class="todo-btn flex-1  ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded hover:bg-teal-400 hover:text-teal-900"
+                    class="todo-btn flex-1 shadow-xl ml-2 px-4 text-teal-200 text-xl border-solid border-2 border-teal-400 rounded hover:bg-teal-400 hover:text-teal-900 focus:outline-none focus:shadow-outline"
                     id="add">Add</button>
             </div>
             <div class="mt-8">
@@ -38,6 +39,7 @@
                 </ul>
             </div>
         </section>
+
     </main>
 
 
