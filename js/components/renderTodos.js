@@ -8,7 +8,7 @@ const renderTodos = (array) => {
   list.innerHTML = "";
 
   if (array.length === 0) {
-    list.innerHTML = `<li>This list is empty</li>`;
+    list.innerHTML = `<li class="empty">This list is empty</li>`;
   }
   array.forEach((todo) => {
     let cssClass = "";

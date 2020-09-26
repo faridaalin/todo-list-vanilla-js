@@ -111,3 +111,10 @@ li button {
   color: #50528a;
   transition: color;
 }
+
+.empty {
+  background-color: #efeff9;
+  border: dotted;
+  color: #6567a7;
+  font-weight: 400;
+}
