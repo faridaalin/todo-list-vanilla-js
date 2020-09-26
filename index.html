@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>My To-do list</title>
+</head>
+
+<body class="bg-teal-100 text-teal-100">
+    <main class="flex items-center justify-center h-screen px-10">
+
+        <section class="todo-container">
+            <header>
+                <span class="date"></span>
+                <h1 class="">Todo list</h1>
+            </header>
+            <div class="filter-todos">
+                <span class="completed">Completed</span>
+                <span class="incompleted">Incompleted</span>
+                <span class="all">All</span>
+            </div>
+            <form class="form">
+                <input class="" type="text" name="todo" id="todo" placeholder="Enter your task here" />
+                <button class="button" id="add">Add</button>
+                <button class="delete delete-all" id="deleteAll">Delete all</button>
+            </form>
+            <div class="">
+                <ul class="todo-list">
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>

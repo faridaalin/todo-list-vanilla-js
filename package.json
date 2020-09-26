@@ -16,10 +16,5 @@
     "url": "https://github.com/faridaalin/todo-list-vanilla-js/issues"
   },
   "homepage": "https://github.com/faridaalin/todo-list-vanilla-js#readme",
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "autoprefixer": "^9.8.6",
-    "postcss-cli": "^7.1.2",
-    "tailwindcss": "^1.8.8"
-  }
+  "dependencies": {}
 }
